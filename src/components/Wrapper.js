@@ -19,7 +19,7 @@ const Wrapper = ({children, navigation}) => {
 
   return (
     <View style={styles.gContainer}>
-      <TopLine navigation={navigation} />
+      <TopLine  navigation={navigation} />
       {children}
       {showBottomBtn ? (
         <BottomBtn navigation={navigation} />
@@ -32,6 +32,7 @@ const Wrapper = ({children, navigation}) => {
 
 const styles = StyleSheet.create({
   ...globalStyles,
+  
 });
 
 export default Wrapper;

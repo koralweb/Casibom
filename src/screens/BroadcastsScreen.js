@@ -16,9 +16,9 @@ const BroadcastsScreen = ({navigation}) => {
             </View>
             <View style={styles.command}>
               <View style={styles.border}>
-               <Text style={styles.command_1}>Kolkata Knight Raiders</Text>
+                <Text style={styles.command_1}>Kolkata Knight Raiders</Text>
               </View>
-               <Text style={styles.command_2}>Royal Challengers Bangalore</Text>
+              <Text style={styles.command_2}>Royal Challengers Bangalore</Text>
             </View>
           </View>
           <View style={styles.cart_2}>
@@ -28,9 +28,9 @@ const BroadcastsScreen = ({navigation}) => {
             </View>
             <View style={styles.command}>
               <View style={styles.border}>
-               <Text style={styles.command_1}>Philadelphia Flyers</Text>
+                <Text style={styles.command_1}>Philadelphia Flyers</Text>
               </View>
-               <Text style={styles.command_2}>Pittsburgh Penguins</Text>
+              <Text style={styles.command_2}>Pittsburgh Penguins</Text>
             </View>
           </View>
           <View style={styles.cart_1}>
@@ -40,9 +40,9 @@ const BroadcastsScreen = ({navigation}) => {
             </View>
             <View style={styles.command}>
               <View style={styles.border}>
-               <Text style={styles.command_1}>Golden State Warriors</Text>
+                <Text style={styles.command_1}>Golden State Warriors</Text>
               </View>
-               <Text style={styles.command_2}>Minnesota Timberwolves</Text>
+              <Text style={styles.command_2}>Minnesota Timberwolves</Text>
             </View>
           </View>
           <View style={styles.cart_2}>
@@ -52,14 +52,12 @@ const BroadcastsScreen = ({navigation}) => {
             </View>
             <View style={styles.command}>
               <View style={styles.border}>
-               <Text style={styles.command_1}>Kolkata Knight Raiders</Text>
+                <Text style={styles.command_1}>Kolkata Knight Raiders</Text>
               </View>
-               <Text style={styles.command_2}>Royal Challengers Bangalore</Text>
+              <Text style={styles.command_2}>Royal Challengers Bangalore</Text>
             </View>
           </View>
-
         </View>
-
       </ScrollView>
     </Wrapper>
   );
@@ -67,19 +65,19 @@ const BroadcastsScreen = ({navigation}) => {
 
 const styles = StyleSheet.create({
   ...globalStyles,
- 
+
   title: {
     paddingTop: 15,
     marginBottom: 15,
-    color: "#191E1F",
+    color: '#191E1F',
     fontSize: 35,
     fontWeight: 900,
     alignSelf: 'center',
   },
   cont: {
-   width: "90%",
-   height: "60%",
-   alignSelf: 'center',
+    width: '90%',
+    height: '60%',
+    alignSelf: 'center',
   },
   cart_1: {
     flexDirection: 'row',
@@ -98,7 +96,7 @@ const styles = StyleSheet.create({
     height: 100,
     paddingLeft: 15,
     marginBottom: 10,
-    backgroundColor: "silver", //"#ECECEC"
+    backgroundColor: 'silver', //"#ECECEC"
   },
   list: {
     justifyContent: 'center',
@@ -111,24 +109,23 @@ const styles = StyleSheet.create({
     paddingLeft: 5,
   },
   inner: {
-    color: "#F79E1B",
+    color: '#F79E1B',
     fontSize: 45,
     fontWeight: 800,
   },
   time: {
-    color: "black",
+    color: 'black',
     fontSize: 15,
     fontWeight: 700,
   },
   command_1: {
-    color: "black",
+    color: 'black',
     fontSize: 15,
     alignSelf: 'center',
     marginBottom: 10,
-    
   },
   command_2: {
-    color: "black",
+    color: 'black',
     fontSize: 15,
     alignSelf: 'center',
   },

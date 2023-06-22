@@ -28,13 +28,19 @@ const BottomLine = ({navigation}) => {
 const styles = StyleSheet.create({
   cont: {
     borderWidth: 1,
+    borderRadius: 30,
     width: '90%',
+    height: 50,
     marginRight: 'auto',
     marginLeft: 'auto',
     marginTop: 'auto',
     marginBottom: 10,
     flexDirection: 'row',
+    justifyContent: "space-around",
+    alignItems: 'center',
+    backgroundColor: "silver", //"#ECECEC"
   },
+  
 });
 
 export default BottomLine;

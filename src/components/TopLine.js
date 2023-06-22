@@ -19,6 +19,8 @@ const TopLine = ({navigation}) => {
       {showMenu && <Menu navigation={navigation} setShowMenu={setShowMenu} />}
       <Image source={require('../assets/logo.png')} style={styles.logo} />
     </View>
+
+    
   );
 };
 
