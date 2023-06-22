@@ -13,8 +13,18 @@ import CartScreen from './src/screens/CartScreen';
 import {faHome} from '@fortawesome/free-solid-svg-icons/faHome';
 import {faHeart} from '@fortawesome/free-solid-svg-icons/faHeart';
 import {faComment} from '@fortawesome/free-solid-svg-icons/faComment';
+import ShopScreen from './src/screens/ShopScreen';
+import {faArrowLeft} from '@fortawesome/free-solid-svg-icons/faArrowLeft';
 
-library.add(faShoppingBag, faTimesCircle, faBars, faHome, faHeart, faComment);
+library.add(
+  faArrowLeft,
+  faShoppingBag,
+  faTimesCircle,
+  faBars,
+  faHome,
+  faHeart,
+  faComment,
+);
 
 const Stack = createNativeStackNavigator();
 
@@ -45,6 +55,11 @@ function App() {
         <Stack.Screen
           name="Cart"
           component={CartScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Shop"
+          component={ShopScreen}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

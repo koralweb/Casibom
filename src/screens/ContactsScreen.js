@@ -13,7 +13,6 @@ const ContactsScreen = ({navigation}) => {
         <Text style={styles.list}>Данные</Text>
         <Text style={styles.list}>Индекс</Text>
       </View>
-
     </Wrapper>
   );
 };
@@ -21,9 +20,9 @@ const ContactsScreen = ({navigation}) => {
 const styles = StyleSheet.create({
   ...globalStyles,
   cont: {
-    backgroundColor: "#ECECEC",
-    width: "90%",
-    height: "60%",
+    backgroundColor: '#ECECEC',
+    width: '90%',
+    height: '60%',
     alignSelf: 'center',
     borderRadius: 20,
     padding: 20,
@@ -31,19 +30,19 @@ const styles = StyleSheet.create({
   title: {
     paddingTop: 15,
     marginBottom: 15,
-    color: "#191E1F",
+    color: '#191E1F',
     fontSize: 35,
     fontWeight: 900,
     alignSelf: 'center',
   },
   list: {
-    backgroundColor: "white",
+    backgroundColor: 'white',
     borderRadius: 25,
     fontSize: 15,
     marginBottom: 15,
     padding: 10,
     paddingLeft: 25,
-    color: "black",
+    color: 'black',
   },
 });
 

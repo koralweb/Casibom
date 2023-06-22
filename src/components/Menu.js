@@ -24,16 +24,24 @@ const Menu = ({setShowMenu, navigation}) => {
         />
       </TouchableOpacity>
       <Image source={require('../assets/topMenu.png')} style={styles.topImg} />
-      <TouchableOpacity style={styles.list}>
+      <TouchableOpacity
+        style={styles.list}
+        onPress={() => navigation.push('Shop')}>
         <Text style={styles.menuText}>Магазин</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.list} onPress={() => navigation.push('Booking')}>
+      <TouchableOpacity
+        style={styles.list}
+        onPress={() => navigation.push('Booking')}>
         <Text style={styles.menuText}>Бронь</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.list} onPress={() => navigation.push('Broadcasts')}>
+      <TouchableOpacity
+        style={styles.list}
+        onPress={() => navigation.push('Broadcasts')}>
         <Text style={styles.menuText}>Трансляции</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.list} onPress={() => navigation.push('Contacts')}>
+      <TouchableOpacity
+        style={styles.list}
+        onPress={() => navigation.push('Contacts')}>
         <Text style={styles.menuText}>Контакты</Text>
       </TouchableOpacity>
       <TouchableOpacity
@@ -62,34 +70,31 @@ const styles = StyleSheet.create({
     width: Dimensions.get('window').width,
     height: Dimensions.get('window').width / 1.2289,
   },
-  toCart: {
-    marginTop: 'auto',
-    marginBottom: 10,
-    borderWidth: 1,
-    padding: 5,
-  },
   list: {
     borderRadius: 30,
     width: 350,
-    height: 60,
+    height: 50,
     alignItems: 'center',
     marginTop: 20,
     backgroundColor: '#ECECEC',
   },
   menuText: {
     paddingTop: 15,
-    color: "#191E1F",
+    color: '#191E1F',
     fontSize: 20,
     fontWeight: 700,
   },
   toCart: {
-    marginTop: 55,
     borderRadius: 30,
     width: 100,
     height: 60,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#ECECEC',
+    marginTop: 'auto',
+    marginBottom: 10,
+    borderWidth: 1,
+    padding: 5,
   },
 });
 
