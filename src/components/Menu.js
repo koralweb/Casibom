@@ -24,17 +24,17 @@ const Menu = ({setShowMenu, navigation}) => {
         />
       </TouchableOpacity>
       <Image source={require('../assets/topMenu.png')} style={styles.topImg} />
-      <TouchableOpacity>
-        <Text>Магазин</Text>
+      <TouchableOpacity style={styles.list}>
+        <Text style={styles.menuText}>Магазин</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.push('Booking')}>
-        <Text>Бронь</Text>
+      <TouchableOpacity style={styles.list} onPress={() => navigation.push('Booking')}>
+        <Text style={styles.menuText}>Бронь</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.push('Broadcasts')}>
-        <Text>Трансляции</Text>
+      <TouchableOpacity style={styles.list} onPress={() => navigation.push('Broadcasts')}>
+        <Text style={styles.menuText}>Трансляции</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.push('Contacts')}>
-        <Text>Контакты</Text>
+      <TouchableOpacity style={styles.list} onPress={() => navigation.push('Contacts')}>
+        <Text style={styles.menuText}>Контакты</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.toCart}
@@ -67,6 +67,29 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     borderWidth: 1,
     padding: 5,
+  },
+  list: {
+    borderRadius: 30,
+    width: 350,
+    height: 60,
+    alignItems: 'center',
+    marginTop: 20,
+    backgroundColor: '#ECECEC',
+  },
+  menuText: {
+    paddingTop: 15,
+    color: "#191E1F",
+    fontSize: 20,
+    fontWeight: 700,
+  },
+  toCart: {
+    marginTop: 55,
+    borderRadius: 30,
+    width: 100,
+    height: 60,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#ECECEC',
   },
 });
 
