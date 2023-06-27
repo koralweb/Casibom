@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
     height: 100,
     paddingLeft: 15,
     marginBottom: 10,
-    backgroundColor: 'silver', //"#ECECEC"
+    backgroundColor: '#ECECEC', 
   },
   list: {
     justifyContent: 'center',

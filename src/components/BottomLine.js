@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: "space-around",
     alignItems: 'center',
-    backgroundColor: "silver", //"#ECECEC"
+    backgroundColor: "#ECECEC", 
   },
   
 });

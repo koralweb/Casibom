@@ -12,6 +12,7 @@ import globalStyles from '../data/style';
 import Wrapper from '../components/Wrapper';
 import products from '../mobx/products';
 import SingleProduct from '../components/SingleProduct';
+import colors from '../data/colors';
 
 const ShopScreen = ({navigation}) => {
   const [showSingleProduct, setShowSingleProduct] = useState(false);
@@ -31,8 +32,11 @@ const ShopScreen = ({navigation}) => {
         key={Math.random()}
         onPress={() => clickOnProduct(prod)}>
         <ImageBackground source={prod.image} style={styles.item}>
-          <Text>{prod.title}</Text>
-          <Text>{prod.price}</Text>
+          <View style={styles.list}>
+           <Text style={styles.title}>{prod.title}</Text>
+           <Text style={styles.price}>{prod.price}</Text>
+          </View>
+          
         </ImageBackground>
       </TouchableOpacity>
     ));
@@ -44,6 +48,7 @@ const ShopScreen = ({navigation}) => {
         <SingleProduct
           clearSingleProduct={clearSingleProduct}
           prod={singleProduct}
+          navigation={navigation}
         />
       ) : (
         <Wrapper navigation={navigation}>
@@ -60,19 +65,41 @@ const imageWidth = Dimensions.get('window').width / 2 - 30;
 const styles = StyleSheet.create({
   ...globalStyles,
   cont: {
-    marginHorizontal: 10,
-    marginVertical: 20,
+    alignSelf: 'center',
+    backgroundColor: colors.black,
   },
   productsCont: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
+    backgroundColor: 'white',
+    padding: 10,
+    borderRadius: 25,
   },
   item: {
     width: imageWidth,
     height: imageWidth,
     borderWidth: 1,
     marginBottom: 10,
+    borderRadius: 5,
+  },
+  title: {
+    color: "white",
+    fontSize: 15,
+    fontWeight: 800,
+   
+  },
+  price: {
+    color: "white",
+    fontSize: 15,
+    fontWeight: 800,
+    
+  },
+  list: {
+  flexDirection: "row",
+  justifyContent: "space-between",
+  paddingLeft: 5,
+  paddingRight: 5,
   },
 });
 

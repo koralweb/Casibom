@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     marginRight: 'auto',
     marginLeft: 'auto',
     marginTop: 'auto',
-    marginBottom: 10,
+    marginBottom: 30,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',

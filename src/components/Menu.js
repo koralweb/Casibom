@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#ECECEC',
   },
   menuText: {
-    paddingTop: 15,
+    paddingTop: 10,
     color: '#191E1F',
     fontSize: 20,
     fontWeight: 700,
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#ECECEC',
     marginTop: 'auto',
-    marginBottom: 10,
+    marginBottom: 'auto',
     borderWidth: 1,
     padding: 5,
   },

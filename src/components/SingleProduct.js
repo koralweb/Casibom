@@ -8,21 +8,28 @@ import {
   View,
 } from 'react-native';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import BottomBtn from '../components/BottomBtn';
 
-const SingleProduct = ({prod, clearSingleProduct}) => {
+
+const SingleProduct = ({prod, clearSingleProduct, navigation}) => {
   return (
-    <View style={styles.cont}>
+    
+          <View style={styles.cont}>
       <ImageBackground style={styles.topImg} source={prod.image}>
         <TouchableOpacity onPress={clearSingleProduct} style={styles.backBtn}>
           <FontAwesomeIcon icon={'arrow-left'} />
         </TouchableOpacity>
       </ImageBackground>
       <View style={styles.productInfo}>
-        <Text>{prod.title}</Text>
-        <Text>{prod.price}</Text>
-        <Text>{prod.desc}</Text>
+        <Text style={styles.title}>{prod.title}</Text>
+        <Text style={styles.price}>{prod.price}</Text>
+        <View style={styles.wrp}>
+        <Text style={styles.desc}>{prod.desc}</Text>
       </View>
+        </View>
+        <BottomBtn navigation={navigation} />
     </View>
+
   );
 };
 
@@ -34,12 +41,18 @@ const styles = StyleSheet.create({
     left: 0,
     width: Dimensions.get('window').width,
     height: Dimensions.get('window').height,
+   
+    
   },
   topImg: {
     width: Dimensions.get('window').width,
     height: Dimensions.get('window').height / 2,
   },
-  productInfo: {},
+  productInfo: {
+    marginLeft: 20,
+    marginTop: 20,
+    borderRadius: 20,
+  },
   backBtn: {
     width: 30,
     height: 30,
@@ -49,6 +62,28 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     marginTop: 20,
     marginLeft: 20,
+  },
+  title: {
+    fontSize: 15,
+    fontWeight: 900,
+    marginBottom: 15,
+  },
+  price: {
+    fontSize: 15,
+    fontWeight: 900,
+    marginBottom: 15,
+  },
+  wrp: {
+    backgroundColor: "#ECECEC",
+    borderRadius: 10,
+    width: "90%",
+    height: "30%",
+    justifyContent: "center",
+   alignItems: "center",
+  },
+  desc: {
+    fontSize: 15,
+    fontWeight: 500,
   },
 });
 
