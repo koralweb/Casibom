@@ -10,11 +10,9 @@ import {
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import BottomBtn from '../components/BottomBtn';
 
-
 const SingleProduct = ({prod, clearSingleProduct, navigation}) => {
   return (
-    
-          <View style={styles.cont}>
+    <View style={styles.cont}>
       <ImageBackground style={styles.topImg} source={prod.image}>
         <TouchableOpacity onPress={clearSingleProduct} style={styles.backBtn}>
           <FontAwesomeIcon icon={'arrow-left'} />
@@ -22,14 +20,13 @@ const SingleProduct = ({prod, clearSingleProduct, navigation}) => {
       </ImageBackground>
       <View style={styles.productInfo}>
         <Text style={styles.title}>{prod.title}</Text>
-        <Text style={styles.price}>{prod.price}</Text>
+        <Text style={styles.price}>{prod.price} грн</Text>
         <View style={styles.wrp}>
-        <Text style={styles.desc}>{prod.desc}</Text>
-      </View>
+          <Text style={styles.desc}>{prod.desc}</Text>
         </View>
-        <BottomBtn navigation={navigation} />
+      </View>
+      <BottomBtn single={prod} navigation={navigation} />
     </View>
-
   );
 };
 
@@ -41,8 +38,6 @@ const styles = StyleSheet.create({
     left: 0,
     width: Dimensions.get('window').width,
     height: Dimensions.get('window').height,
-   
-    
   },
   topImg: {
     width: Dimensions.get('window').width,
@@ -74,12 +69,12 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   wrp: {
-    backgroundColor: "#ECECEC",
+    backgroundColor: '#ECECEC',
     borderRadius: 10,
-    width: "90%",
-    height: "30%",
-    justifyContent: "center",
-   alignItems: "center",
+    width: '90%',
+    height: '30%',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   desc: {
     fontSize: 15,

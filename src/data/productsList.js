@@ -1,4 +1,4 @@
-const productsList = [
+let productsList = [
   {
     title: 'Суп кимчи',
     desc: 'Острый суп на основе мисо, с капустой кимчи, говядиной, тофу, яйцом и водорослями вакамэ. Украшается зелёным луком и кунжутом',
@@ -149,7 +149,15 @@ const productsList = [
     price: 1350,
     image: require('../assets/q55.jpg'),
   },
-  
 ];
+
+productsList = productsList.map(el => {
+  return {
+    ...el,
+    added: false,
+    count: 1,
+    id: Math.random(),
+  };
+});
 
 export default productsList;

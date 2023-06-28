@@ -1,48 +1,76 @@
-import React from 'react';
-import {ScrollView, StyleSheet, Text, View, Image} from 'react-native';
+import React, {useState} from 'react';
+import {
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import globalStyles from '../data/style';
 import Wrapper from '../components/Wrapper';
+import products from '../mobx/products';
+import {observer} from 'mobx-react-lite';
 
+const Counter = () => {
+  const [cnt, setCnt] = useState(1);
+
+  const increment = () => {
+    setCnt(cnt + 1);
+  };
+
+  const decrement = () => {
+    if (cnt === 1) {
+      return;
+    }
+    setCnt(cnt - 1);
+  };
+
+  return (
+    <View style={styles.count}>
+      <TouchableOpacity onPress={decrement}>
+        <Text style={styles.countItem}>-</Text>
+      </TouchableOpacity>
+      <Text style={styles.countItem}>{cnt}</Text>
+      <TouchableOpacity onPress={increment}>
+        <Text style={styles.countItem}>+</Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
 
 const CartScreen = ({navigation}) => {
+  const renderProducts = () => {
+    return products.list
+      .filter(el => el.added)
+      .map(prod => (
+        <View style={styles.cont} key={prod.title}>
+          <Image source={prod.image} style={styles.img} />
+
+          <View>
+            <View style={styles.wrp}>
+              <Counter />
+              <TouchableOpacity
+                style={styles.btn}
+                onPress={() => products.removeProduct(prod.id)}>
+                <Text style={{color: '#fff'}}>Delete</Text>
+              </TouchableOpacity>
+            </View>
+
+            <Text style={styles.price}>{prod.title}</Text>
+            <Text style={styles.price}>{prod.price} грн </Text>
+            <Text style={styles.desc}>{prod.desc}</Text>
+          </View>
+        </View>
+      ));
+  };
+
   return (
     <Wrapper navigation={navigation}>
       <ScrollView>
         <Text style={styles.title}>Корзина</Text>
-        
-         <View style={styles.cont}>
-            <Image source={require('../assets/c1.jpg')} style={styles.img}></Image>
-            
-            <View>
-              <View style={styles.wrp}>
-                <Text style={styles.count}>- 1 +</Text>
-                <Text style={styles.btn}>Delite</Text>
-              </View>
-                
-               <Text style={styles.price}>189</Text>
-               <Text style={styles.desc}>Филе грудки цыплёнка, майонез, дижонская горчица, морковь, яблоко, салат айсберг, китайская капуста, сыр гауда, картофель пай, перец чили острый.</Text>
-             </View> 
-                  
-          </View>
-          <View style={styles.cont}>
-            <Image source={require('../assets/c22.jpg')} style={styles.img}></Image>
-            
-            <View>
-              <View style={styles.wrp}>
-                <Text style={styles.count}>- 1 +</Text>
-                <Text style={styles.btn}>Delite</Text>
-              </View>
-                
-               <Text style={styles.price}>189</Text>
-               <Text style={styles.desc}>Филе грудки цыплёнка, майонез, дижонская горчица, морковь, яблоко, салат айсберг, китайская капуста, сыр гауда, картофель пай, перец чили острый.</Text>
-             </View> 
-                  
-          </View>
-          
-      
-       
+        {renderProducts()}
       </ScrollView>
-      
     </Wrapper>
   );
 };
@@ -52,16 +80,8 @@ const styles = StyleSheet.create({
   title: {
     paddingTop: 15,
     marginBottom: 15,
-    color: "#191E1F",
-    fontSize: 35,
-    fontWeight: 900,
-    alignSelf: 'center',
-  },
-  desc: {
-    paddingTop: 15,
-    marginBottom: 15,
-    color: "silver",
-    fontSize: 25,
+    color: '#191E1F',
+    fontSize: 30,
     fontWeight: 900,
     alignSelf: 'center',
   },
@@ -72,48 +92,58 @@ const styles = StyleSheet.create({
     borderRadius: 25,
   },
   cont: {
-    flexDirection: "row",
+    flexDirection: 'row',
     marginLeft: 20,
-    width: "50%",
+    width: '50%',
     marginBottom: 20,
   },
   count: {
-    backgroundColor: "#FF9B02",
+    backgroundColor: '#FF9B02',
     width: 90,
     height: 30,
     textAlign: 'center',
     paddingTop: 3,
-    color: "white",
+    color: 'white',
     marginRight: 5,
     borderRadius: 15,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+  },
+  countItem: {
     fontSize: 15,
-    fontWeight: 600,
+    fontWeight: '700',
   },
   btn: {
-    backgroundColor: "#760505",
+    backgroundColor: '#760505',
     width: 90,
     height: 30,
     textAlign: 'center',
     paddingTop: 3,
-    color: "white",
+    color: 'white',
     borderRadius: 15,
     fontSize: 15,
     fontWeight: 600,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   wrp: {
-    flexDirection: "row",
+    flexDirection: 'row',
   },
   desc: {
-    color: "black",
+    color: 'black',
     fontSize: 13,
-    fontWeight: 400,
+    paddingTop: 15,
+    marginBottom: 15,
+    fontWeight: 900,
+    alignSelf: 'center',
   },
   price: {
-    color: "black",
+    color: 'black',
     fontSize: 15,
     fontWeight: 800,
     marginTop: 5,
   },
 });
 
-export default CartScreen;
+export default observer(CartScreen);

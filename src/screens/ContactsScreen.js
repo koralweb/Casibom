@@ -8,10 +8,10 @@ const ContactsScreen = ({navigation}) => {
     <Wrapper navigation={navigation}>
       <Text style={styles.title}>Контакты</Text>
       <View style={styles.cont}>
-        <Text style={styles.list}>Номер 000 0000 000</Text>
-        <Text style={styles.list}>Адрес Город, Страна</Text>
-        <Text style={styles.list}>Данные</Text>
-        <Text style={styles.list}>Индекс</Text>
+        <Text style={styles.list}>Номер +375 (17) 254-49-50</Text>
+        <Text style={styles.list}>г. Минск, пр. Победителей, 22</Text>
+        <Text style={styles.list}>Вход со двора</Text>
+        <Text style={styles.list}>220004</Text>
       </View>
     </Wrapper>
   );

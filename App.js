@@ -15,6 +15,9 @@ import {faHeart} from '@fortawesome/free-solid-svg-icons/faHeart';
 import {faComment} from '@fortawesome/free-solid-svg-icons/faComment';
 import ShopScreen from './src/screens/ShopScreen';
 import {faArrowLeft} from '@fortawesome/free-solid-svg-icons/faArrowLeft';
+import {faCheckCircle} from '@fortawesome/free-solid-svg-icons/faCheckCircle';
+import {faTags} from '@fortawesome/free-solid-svg-icons/faTags';
+import {faFileText} from '@fortawesome/free-solid-svg-icons/faFileText';
 
 library.add(
   faArrowLeft,
@@ -24,6 +27,9 @@ library.add(
   faHome,
   faHeart,
   faComment,
+  faCheckCircle,
+  faTags,
+  faFileText,
 );
 
 const Stack = createNativeStackNavigator();

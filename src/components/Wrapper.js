@@ -6,12 +6,12 @@ import BottomLine from './BottomLine';
 import BottomBtn from './BottomBtn';
 import {useRoute} from '@react-navigation/native';
 
-const Wrapper = ({children, navigation}) => {
+const Wrapper = ({children, navigation, setThanks}) => {
   const [showBottomBtn, setShowBottomBtn] = useState(false);
   const screenName = useState(useRoute().name)[0];
 
   useEffect(() => {
-    const screensVsBtn = ['Booking'];
+    const screensVsBtn = ['Booking', 'Cart'];
     if (screensVsBtn.includes(screenName)) {
       setShowBottomBtn(true);
     }
@@ -19,10 +19,10 @@ const Wrapper = ({children, navigation}) => {
 
   return (
     <View style={styles.gContainer}>
-      <TopLine  navigation={navigation} />
+      <TopLine navigation={navigation} />
       {children}
       {showBottomBtn ? (
-        <BottomBtn navigation={navigation} />
+        <BottomBtn setThanks={setThanks} navigation={navigation} />
       ) : (
         <BottomLine navigation={navigation} />
       )}
@@ -32,7 +32,6 @@ const Wrapper = ({children, navigation}) => {
 
 const styles = StyleSheet.create({
   ...globalStyles,
-  
 });
 
 export default Wrapper;

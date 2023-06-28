@@ -33,10 +33,9 @@ const ShopScreen = ({navigation}) => {
         onPress={() => clickOnProduct(prod)}>
         <ImageBackground source={prod.image} style={styles.item}>
           <View style={styles.list}>
-           <Text style={styles.title}>{prod.title}</Text>
-           <Text style={styles.price}>{prod.price}</Text>
+            <Text style={styles.title}>{prod.title}</Text>
+            <Text style={styles.price}>{prod.price}</Text>
           </View>
-          
         </ImageBackground>
       </TouchableOpacity>
     ));
@@ -84,22 +83,24 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   title: {
-    color: "white",
+    color: 'white',
     fontSize: 15,
     fontWeight: 800,
-   
+    width: '80%',
   },
   price: {
-    color: "white",
+    color: 'white',
     fontSize: 15,
     fontWeight: 800,
-    
+    width: '20%',
+    textAlign: 'center',
   },
   list: {
-  flexDirection: "row",
-  justifyContent: "space-between",
-  paddingLeft: 5,
-  paddingRight: 5,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingLeft: 5,
+    paddingRight: 5,
+    width: '100%',
   },
 });
 
