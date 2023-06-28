@@ -58,7 +58,7 @@ const CartScreen = ({navigation}) => {
             </View>
 
             <Text style={styles.price}>{prod.title}</Text>
-            <Text style={styles.price}>{prod.price} грн </Text>
+            <Text style={styles.price}>{prod.price} р </Text>
             <Text style={styles.desc}>{prod.desc}</Text>
           </View>
         </View>

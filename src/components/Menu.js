@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Dimensions,
   Image,
@@ -10,19 +10,23 @@ import {
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import colors from '../data/colors';
 import globalStyles from '../data/style';
+import {useRoute} from '@react-navigation/native';
 
 const Menu = ({setShowMenu, navigation}) => {
+  const screenName = useState(useRoute().name);
   return (
     <View style={styles.cont}>
-      <TouchableOpacity
-        style={{...styles.closeBtn, zIndex: 1000}}
-        onPress={() => setShowMenu(false)}>
-        <FontAwesomeIcon
-          icon={'times-circle'}
-          color={colors.yellow}
-          size={35}
-        />
-      </TouchableOpacity>
+      {screenName !== 'Home' && (
+        <TouchableOpacity
+          style={{...styles.closeBtn, zIndex: 1000}}
+          onPress={() => setShowMenu(false)}>
+          <FontAwesomeIcon
+            icon={'times-circle'}
+            color={colors.yellow}
+            size={35}
+          />
+        </TouchableOpacity>
+      )}
       <Image source={require('../assets/topMenu.png')} style={styles.topImg} />
       <TouchableOpacity
         style={styles.list}

@@ -20,7 +20,7 @@ const SingleProduct = ({prod, clearSingleProduct, navigation}) => {
       </ImageBackground>
       <View style={styles.productInfo}>
         <Text style={styles.title}>{prod.title}</Text>
-        <Text style={styles.price}>{prod.price} грн</Text>
+        <Text style={styles.price}>{prod.price} р</Text>
         <View style={styles.wrp}>
           <Text style={styles.desc}>{prod.desc}</Text>
         </View>
