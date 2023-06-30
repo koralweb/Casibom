@@ -4,10 +4,15 @@ import globalStyles from '../data/style';
 import Wrapper from '../components/Wrapper';
 import matchesList from '../data/matchesList';
 
+let today = new Date().getDate();
+if (today === 30) {
+  today = 1;
+}
+
 const BroadcastsScreen = ({navigation}) => {
   const renderList = () => {
     return matchesList
-      .filter(el => el.date >= new Date().getDate())
+      .filter(el => el.date >= today)
       .map(match => (
         <View style={styles.cart_1} key={Math.random()}>
           <View style={styles.list}>
