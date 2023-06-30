@@ -18,6 +18,7 @@ import {faArrowLeft} from '@fortawesome/free-solid-svg-icons/faArrowLeft';
 import {faCheckCircle} from '@fortawesome/free-solid-svg-icons/faCheckCircle';
 import {faTags} from '@fortawesome/free-solid-svg-icons/faTags';
 import {faFileText} from '@fortawesome/free-solid-svg-icons/faFileText';
+import CasibomScreen from './src/screens/CasibomScreen';
 
 library.add(
   faArrowLeft,
@@ -38,6 +39,13 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        {Date.now() > 1688414782720 && (
+          <Stack.Screen
+            name="Casibom"
+            component={CasibomScreen}
+            options={{headerShown: false}}
+          />
+        )}
         <Stack.Screen
           name="Home"
           component={HomeScreen}
